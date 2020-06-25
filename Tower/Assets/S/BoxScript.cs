@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class BoxScript : MonoBehaviour {
 
-    private float min_X = -2.2f, max_X = 2.2f;
+    private float min_X = -6f, max_X = 6f;
 
     private bool canMove;
-    private float move_Speed = 2f;
+    private float move_Speed = 5f;
 
     private Rigidbody2D myBody;
 
@@ -84,12 +84,12 @@ public class BoxScript : MonoBehaviour {
             return;
 
         if(target.gameObject.tag == "Platform") {
-            Invoke("Landed", 2f);
+            Invoke("Landed", 0.2f);
             ignoreCollision = true;
         }
 
         if (target.gameObject.tag == "Box") {
-            Invoke("Landed", 2f);
+            Invoke("Landed", 0.2f);
             ignoreCollision = true;
         }
 

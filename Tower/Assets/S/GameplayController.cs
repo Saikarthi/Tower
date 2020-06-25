@@ -34,7 +34,7 @@ public class GameplayController : MonoBehaviour {
     }
 
     public void SpawnNewBox() {
-        Invoke("NewBox", 2f);
+        Invoke("NewBox", 0.2f);
     }
 
     void NewBox() {
