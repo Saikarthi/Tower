@@ -7,12 +7,12 @@ public class GameplayController : MonoBehaviour {
     public static GameplayController instance;
 
     public BoxSpawner box_Spawner;
-
+    public int p;
     [HideInInspector]
     public BoxScript currentBox;
 
     public CameraFollow cameraScript;
-    private int moveCount;
+    public int moveCount = 0 ;
 
     void Awake() {
         if (instance == null)
@@ -24,7 +24,9 @@ public class GameplayController : MonoBehaviour {
     }
 
     void Update() {
+        p = moveCount;
         DetectInput();
+       
     }
 
     void DetectInput() {
@@ -34,11 +36,22 @@ public class GameplayController : MonoBehaviour {
     }
 
     public void SpawnNewBox() {
-        Invoke("NewBox", 0.2f);
+
+        if (p != 2)
+        {
+            Invoke("NewBox", 0.5f);
+        }
+        else
+        {
+            Invoke("NewBox", 2.0f);
+
+        }
+        
     }
 
     void NewBox() {
         box_Spawner.SpawnBox();
+
     }
 
     public void MoveCamera() {
@@ -47,7 +60,7 @@ public class GameplayController : MonoBehaviour {
 
         if(moveCount == 3) {
             moveCount = 0;
-            cameraScript.targetPos.y += 2f;
+            cameraScript.targetPos.y += 2.6f;
         }
 
     }

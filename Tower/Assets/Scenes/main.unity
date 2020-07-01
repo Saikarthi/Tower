@@ -530,6 +530,7 @@ MonoBehaviour:
   box_Spawner: {fileID: 1488881817}
   currentBox: {fileID: 0}
   cameraScript: {fileID: 519420030}
+  moveCount: 0
 --- !u!4 &2009315029
 Transform:
   m_ObjectHideFlags: 0
@@ -615,6 +616,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 745350236384407402, guid: d6fba3d4b827f794bae2b5b5c3f44562,
+        type: 3}
+      propertyPath: m_Constraints
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d6fba3d4b827f794bae2b5b5c3f44562, type: 3}
